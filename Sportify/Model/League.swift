@@ -1,0 +1,31 @@
+//
+//  League.swift
+//  Sportify
+//
+//  Created by Macos on 13/05/2025.
+//
+
+import Foundation
+
+struct League: Codable {
+    let leagueKey: String
+    let leagueName: String
+    let countryKey: String
+    let countryName: String
+    let leagueLogo: String?
+    let countryLogo: String?
+
+    enum CodingKeys: String, CodingKey {
+        case leagueKey = "league_key"
+        case leagueName = "league_name"
+        case countryKey = "country_key"
+        case countryName = "country_name"
+        case leagueLogo = "league_logo"
+        case countryLogo = "country_logo"
+    }
+}
+
+struct LeaguesResponse: Codable {
+    let success: Int
+    let result: [League]
+}

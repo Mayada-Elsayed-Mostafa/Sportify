@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222E33C02DD3E0090022E033 /* LeaguesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E33BF2DD3E0090022E033 /* LeaguesViewController.swift */; };
+		222E33C72DD3E8E30022E033 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 222E33C62DD3E8E30022E033 /* SDWebImage */; };
+		222E33C92DD3E8E70022E033 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 222E33C82DD3E8E70022E033 /* SDWebImageMapKit */; };
+		222E33CC2DD3EEB80022E033 /* SportApiServive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E33CB2DD3EEB80022E033 /* SportApiServive.swift */; };
+		222E33CE2DD3EEFD0022E033 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 222E33CD2DD3EEFD0022E033 /* Alamofire */; };
+		222E33D02DD3EF020022E033 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 222E33CF2DD3EF020022E033 /* AlamofireDynamic */; };
+		222E33D12DD3EF020022E033 /* AlamofireDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 222E33CF2DD3EF020022E033 /* AlamofireDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		222E33D52DD3EF910022E033 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222E33D42DD3EF910022E033 /* League.swift */; };
 		2293E1772DD26D58000A26EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293E1762DD26D58000A26EA /* AppDelegate.swift */; };
 		2293E1792DD26D58000A26EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293E1782DD26D58000A26EA /* SceneDelegate.swift */; };
 		2293E17B2DD26D58000A26EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293E17A2DD26D58000A26EA /* ViewController.swift */; };
@@ -36,7 +44,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		222E33D22DD3EF020022E033 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				222E33D12DD3EF020022E033 /* AlamofireDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		222E33BF2DD3E0090022E033 /* LeaguesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguesViewController.swift; sourceTree = "<group>"; };
+		222E33CB2DD3EEB80022E033 /* SportApiServive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportApiServive.swift; sourceTree = "<group>"; };
+		222E33D42DD3EF910022E033 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		2293E1732DD26D58000A26EA /* Sportify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2293E1762DD26D58000A26EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2293E1782DD26D58000A26EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +85,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222E33CE2DD3EEFD0022E033 /* Alamofire in Frameworks */,
+				222E33D02DD3EF020022E033 /* AlamofireDynamic in Frameworks */,
+				222E33C92DD3E8E70022E033 /* SDWebImageMapKit in Frameworks */,
+				222E33C72DD3E8E30022E033 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +109,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		222E33C52DD3E8DC0022E033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		222E33D32DD3EF820022E033 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				222E33D42DD3EF910022E033 /* League.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2293E16A2DD26D58000A26EA = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +131,7 @@
 				2293E18F2DD26D5B000A26EA /* SportifyTests */,
 				2293E1992DD26D5B000A26EA /* SportifyUITests */,
 				2293E1742DD26D58000A26EA /* Products */,
+				222E33C52DD3E8DC0022E033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +148,7 @@
 		2293E1752DD26D58000A26EA /* Sportify */ = {
 			isa = PBXGroup;
 			children = (
+				222E33D32DD3EF820022E033 /* Model */,
 				2293E1762DD26D58000A26EA /* AppDelegate.swift */,
 				2293E1782DD26D58000A26EA /* SceneDelegate.swift */,
 				2293E17A2DD26D58000A26EA /* ViewController.swift */,
@@ -111,6 +157,8 @@
 				2293E1842DD26D5B000A26EA /* LaunchScreen.storyboard */,
 				2293E1872DD26D5B000A26EA /* Info.plist */,
 				2293E17F2DD26D58000A26EA /* Sportify.xcdatamodeld */,
+				222E33BF2DD3E0090022E033 /* LeaguesViewController.swift */,
+				222E33CB2DD3EEB80022E033 /* SportApiServive.swift */,
 			);
 			path = Sportify;
 			sourceTree = "<group>";
@@ -142,12 +190,19 @@
 				2293E16F2DD26D58000A26EA /* Sources */,
 				2293E1702DD26D58000A26EA /* Frameworks */,
 				2293E1712DD26D58000A26EA /* Resources */,
+				222E33D22DD3EF020022E033 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Sportify;
+			packageProductDependencies = (
+				222E33C62DD3E8E30022E033 /* SDWebImage */,
+				222E33C82DD3E8E70022E033 /* SDWebImageMapKit */,
+				222E33CD2DD3EEFD0022E033 /* Alamofire */,
+				222E33CF2DD3EF020022E033 /* AlamofireDynamic */,
+			);
 			productName = Sportify;
 			productReference = 2293E1732DD26D58000A26EA /* Sportify.app */;
 			productType = "com.apple.product-type.application";
@@ -221,6 +276,10 @@
 				ar,
 			);
 			mainGroup = 2293E16A2DD26D58000A26EA;
+			packageReferences = (
+				222E33C42DD3E8560022E033 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				222E33CA2DD3EE910022E033 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 2293E1742DD26D58000A26EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -264,9 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222E33D52DD3EF910022E033 /* League.swift in Sources */,
 				2293E17B2DD26D58000A26EA /* ViewController.swift in Sources */,
 				2293E1812DD26D58000A26EA /* Sportify.xcdatamodeld in Sources */,
+				222E33C02DD3E0090022E033 /* LeaguesViewController.swift in Sources */,
 				2293E1772DD26D58000A26EA /* AppDelegate.swift in Sources */,
+				222E33CC2DD3EEB80022E033 /* SportApiServive.swift in Sources */,
 				2293E1792DD26D58000A26EA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -436,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -460,6 +522,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +550,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -612,6 +676,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		222E33C42DD3E8560022E033 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.21.0;
+			};
+		};
+		222E33CA2DD3EE910022E033 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		222E33C62DD3E8E30022E033 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222E33C42DD3E8560022E033 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		222E33C82DD3E8E70022E033 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222E33C42DD3E8560022E033 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		222E33CD2DD3EEFD0022E033 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222E33CA2DD3EE910022E033 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		222E33CF2DD3EF020022E033 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222E33CA2DD3EE910022E033 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2293E17F2DD26D58000A26EA /* Sportify.xcdatamodeld */ = {
