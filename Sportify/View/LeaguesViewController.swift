@@ -13,22 +13,13 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var leaguesTableView: UITableView!
     var leagues: [League] = []
+    var presenter: LeaguesPresenter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("didLoad")
-        SportsApiService.shared.getLeagues{
-            [weak self] leagues in
-                    guard let self = self else { return }
-                    if let leagues = leagues {
-                        self.leagues = leagues
-                        DispatchQueue.main.async {
-                            self.leaguesTableView.reloadData()
-                        }
-                    } else {
-                        print("❌ Failed to load leagues")
-                    }
-        }
+        presenter = LeaguesPresenter(vc: self)
+        presenter?.getLeagues()
     }
     
     
@@ -40,9 +31,10 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "leagueCell", for: indexPath)
-        (cell.viewWithTag(2) as! UILabel).text = "Uefa Champions league"
+        (cell.viewWithTag(2) as! UILabel).text = leagues[indexPath.row].leagueName
+        
         let imageView = (cell.viewWithTag(1) as! UIImageView)
-        imageView.sd_setImage(with:URL(string: "https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg"))
+        imageView.sd_setImage(with:URL(string: leagues[indexPath.row].leagueLogo ?? ""))
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         
         return cell
