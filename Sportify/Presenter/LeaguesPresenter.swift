@@ -16,22 +16,25 @@ class LeaguesPresenter {
         self.vc = vc
     }
 
-    func getLeagues(){
+    func getLeagues(endPoint: String){
     
         let parameters: [String: Any] = [
             "met": "Leagues",
             "APIkey": Constants.API_KEY
         ]
         
-        SportsApiService.shared.get(parameters: parameters) { (response: LeaguesResponse?) in
+        SportsApiService.shared.get(endPoint: endPoint,parameters: parameters) { (response: LeaguesResponse?) in
             if let leagues = response?.result {
-                
                 let first100 = Array(leagues.prefix(100))
-                let withLogos = first100.dropFirst().filter { $0.leagueLogo != nil && !$0.leagueLogo!.isEmpty
+                
+                if(endPoint == Constants.FOOTBALL){
+                    let withLogos = first100.dropFirst().filter { $0.leagueLogo != nil && !$0.leagueLogo!.isEmpty
+                    }
+                    self.vc?.leagues = withLogos
+                }else{
+                    self.vc?.leagues = first100
                 }
 
-                self.vc?.leagues = withLogos
-                
                 DispatchQueue.main.async {
                     self.vc?.leaguesTableView.reloadData()
                 }

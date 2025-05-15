@@ -12,14 +12,17 @@ import Alamofire
 
 class SportsApiService {
     static let shared = SportsApiService()
-    private let baseURL = "https://apiv2.allsportsapi.com/football/"
+    private let baseURL = "https://apiv2.allsportsapi.com/"
     
     
-    func get<T: Decodable>(parameters: [String: Any], completion: @escaping (T?) -> Void) {
-        AF.request(baseURL, method: .get, parameters: parameters)
+    func get<T: Decodable>(endPoint: String, parameters: [String: Any], completion: @escaping (T?) -> Void) {
+        
+        let url = baseURL + "\(endPoint)/"
+        print(url)
+        AF.request(url, method: .get, parameters: parameters)
             .validate()
             .responseDecodable(of: T.self) { response in
-                debugPrint(response)
+
                 switch response.result {
                 case .success(let data):
                     completion(data)

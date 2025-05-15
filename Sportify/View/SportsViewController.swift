@@ -26,6 +26,29 @@ class SportsViewController: UIViewController, UICollectionViewDelegate, UICollec
 
         presenter.fetchSports()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let leaguesVC = storyboard.instantiateViewController(withIdentifier: "LeaguesViewController") as? LeaguesViewController {
+            
+            switch indexPath.row{
+                case 0:
+                    leaguesVC.leagueType = Constants.FOOTBALL
+                case 1:
+                    leaguesVC.leagueType = Constants.BASKETBALL
+                case 2:
+                    leaguesVC.leagueType = Constants.TENNIS
+                case 3:
+                    leaguesVC.leagueType = Constants.CRICKET
+                default:
+                    leaguesVC.leagueType = Constants.FOOTBALL
+            }
+
+            navigationController?.pushViewController(leaguesVC, animated: true)
+        }
+    }
 }
 
 extension SportsViewController: SportsViewProtocol {

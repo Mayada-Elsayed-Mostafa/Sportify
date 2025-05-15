@@ -8,10 +8,10 @@
 import Foundation
 
 struct League: Codable {
-    let leagueKey: Int
-    let leagueName: String
-    let countryKey: Int
-    let countryName: String
+    let leagueKey: Int?
+    let leagueName: String?
+    let countryKey: Int?
+    let countryName: String?
     let leagueLogo: String?
     let countryLogo: String?
 

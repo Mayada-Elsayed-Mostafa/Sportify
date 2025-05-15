@@ -14,17 +14,19 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var leaguesTableView: UITableView!
     var leagues: [League] = []
     var presenter: LeaguesPresenter?
+    var leagueType: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("didLoad")
         presenter = LeaguesPresenter(vc: self)
-        presenter?.getLeagues()
+        print(leagueType)
+        presenter?.getLeagues(endPoint: leagueType ?? "football")
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(leagues.count)
+        print("leagues.count \(leagues.count)")
         return leagues.count
     }
     
@@ -34,7 +36,20 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         (cell.viewWithTag(2) as! UILabel).text = leagues[indexPath.row].leagueName
         
         let imageView = (cell.viewWithTag(1) as! UIImageView)
-        imageView.sd_setImage(with:URL(string: leagues[indexPath.row].leagueLogo ?? ""))
+        
+        switch leagueType{
+            case Constants.FOOTBALL:
+                imageView.sd_setImage(with:URL(string: leagues[indexPath.row].leagueLogo ?? ""))
+            case Constants.BASKETBALL:
+                imageView.image = UIImage(named: "basketball")
+            case Constants.TENNIS:
+                imageView.image = UIImage(named: "tennis")
+            case Constants.CRICKET:
+                imageView.image = UIImage(named: "cricket")
+            default:
+                imageView.sd_setImage(with:URL(string: leagues[indexPath.row].leagueLogo ?? ""))
+        }
+
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         
         return cell
