@@ -11,9 +11,11 @@ import Foundation
 class LeaguesPresenter {
     var vc: LeaguesViewController?
     var leagues: [League]?
+    var localSource: LeagueLocalSourceProtocol?
     
-    init(vc: LeaguesViewController) {
+    init(vc: LeaguesViewController, localSource: LeagueLocalSourceProtocol) {
         self.vc = vc
+        self.localSource = localSource
     }
 
     func getLeagues(endPoint: String){
@@ -42,6 +44,10 @@ class LeaguesPresenter {
                 print("Failed to fetch leagues")
             }
         }
+    }
+    
+    func saveLeagueToCoreData(league: League) -> Result<Void, Error> {
+        return localSource?.insertLeague(league: league) ??  .failure(NSError(domain: "App", code: 0, userInfo: [NSLocalizedDescriptionKey: "Local source is unavailable"]))
     }
 
 }

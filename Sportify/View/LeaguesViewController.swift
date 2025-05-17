@@ -18,15 +18,15 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("didLoad")
-        presenter = LeaguesPresenter(vc: self)
-        print(leagueType)
+
+        presenter = LeaguesPresenter(vc: self, localSource: LeagueLocalSource())
+       
         presenter?.getLeagues(endPoint: leagueType ?? "football")
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("leagues.count \(leagues.count)")
+       
         return leagues.count
     }
     
@@ -53,6 +53,20 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         imageView.layer.cornerRadius = imageView.frame.size.width / 2
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let res = presenter?.saveLeagueToCoreData(league: leagues[indexPath.row])
+        
+        switch res {
+        case .success:
+            print("League saved successfully")
+        case .failure(let error):
+            print("Failed to save league: \(error.localizedDescription)")
+        case .none:
+            print(leagues[indexPath.row].leagueName)
+        }
+        print(leagues[indexPath.row].leagueName)
     }
     /*
     // MARK: - Navigation
