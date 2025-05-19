@@ -47,6 +47,8 @@
 		22D3A2012DD79951000E1E0B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3A2002DD79951000E1E0B /* Event.swift */; };
 		22D3A2032DD79962000E1E0B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3A2022DD79962000E1E0B /* Team.swift */; };
 		22D3A2052DD79B5E000E1E0B /* LeagueDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3A2042DD79B5E000E1E0B /* LeagueDetailsPresenter.swift */; };
+		22D3B1992DDBCDD900F609E9 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3B1982DDBCDD900F609E9 /* FavoritesViewController.swift */; };
+		22D3B19C2DDBCE7D00F609E9 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3B19B2DDBCE7D00F609E9 /* FavoritePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,8 @@
 		22D3A2002DD79951000E1E0B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		22D3A2022DD79962000E1E0B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		22D3A2042DD79B5E000E1E0B /* LeagueDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueDetailsPresenter.swift; sourceTree = "<group>"; };
+		22D3B1982DDBCDD900F609E9 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		22D3B19B2DDBCE7D00F609E9 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 		22516B772DD4E2AD00616242 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				22D3B19A2DDBCE5700F609E9 /* Favorites */,
 				22516B792DD4EBCD00616242 /* LeaguesPresenter.swift */,
 				223EDCED2DD50BA100481A0C /* SportsPresenter.swift */,
 				223EDCF12DD50C2800481A0C /* SportsViewProtocol.swift */,
@@ -197,6 +202,7 @@
 		22516B782DD4E2BA00616242 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22D3B1972DDBCDC300F609E9 /* Favorites */,
 				222E33BF2DD3E0090022E033 /* LeaguesViewController.swift */,
 				223EDCE72DD5068400481A0C /* SportsViewController.swift */,
 				223EDCE92DD50AE900481A0C /* SportCell.swift */,
@@ -284,6 +290,22 @@
 				2293E19C2DD26D5B000A26EA /* SportifyUITestsLaunchTests.swift */,
 			);
 			path = SportifyUITests;
+			sourceTree = "<group>";
+		};
+		22D3B1972DDBCDC300F609E9 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				22D3B1982DDBCDD900F609E9 /* FavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		22D3B19A2DDBCE5700F609E9 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				22D3B19B2DDBCE7D00F609E9 /* FavoritePresenter.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,15 +455,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D3B1992DDBCDD900F609E9 /* FavoritesViewController.swift in Sources */,
 				222E33D52DD3EF910022E033 /* League.swift in Sources */,
 				2247EFA12DD8E8C700E11FBF /* LeagueLocalSource.swift in Sources */,
 				2293E17B2DD26D58000A26EA /* ViewController.swift in Sources */,
 				223EDCEB2DD50AE900481A0C /* SportCell.swift in Sources */,
-				2293E1812DD26D58000A26EA /* Sportify.xcdatamodeld in Sources */,
 				2283B88D2DD9288800DBFCA9 /* LeagueDetailsCollectionViewController.swift in Sources */,
 				2283B8982DD9516800DBFCA9 /* LatestEventsCollectionViewCell.swift in Sources */,
 				22D3A2012DD79951000E1E0B /* Event.swift in Sources */,
-
 				222E33C02DD3E0090022E033 /* LeaguesViewController.swift in Sources */,
 				2247EF9F2DD8E88100E11FBF /* LeagueLocalSourceProtocol.swift in Sources */,
 				2293E1772DD26D58000A26EA /* AppDelegate.swift in Sources */,
@@ -449,6 +470,7 @@
 				2283B8902DD94B4600DBFCA9 /* UpComingEvensCollectionViewCell.swift in Sources */,
 				2247EF9C2DD8E3C500E11FBF /* SportifyCoreData.xcdatamodeld in Sources */,
 				222E33CC2DD3EEB80022E033 /* SportApiServive.swift in Sources */,
+				22D3B19C2DDBCE7D00F609E9 /* FavoritePresenter.swift in Sources */,
 				2293E1792DD26D58000A26EA /* SceneDelegate.swift in Sources */,
 				2237AB682DDB06ED00143D3C /* Fixture.swift in Sources */,
 				223EDCE82DD5068400481A0C /* SportsViewController.swift in Sources */,

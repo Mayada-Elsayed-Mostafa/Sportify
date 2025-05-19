@@ -11,13 +11,13 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
 
    let sectionTitles = ["Upcoming Events", "Latest Events", "Teams"]
    var leagueType: String?
+   var leagueId: Int?
    var presenter: LeagueDetailsPresenter?
 
    override func viewDidLoad() {
        super.viewDidLoad()
        presenter = LeagueDetailsPresenter(vc: self)
-       presenter?.getFixtures(endPoint: leagueType ?? "")
-       presenter?.getTeams(endPoint: leagueType ?? "")
+       presenter?.getFixtures(endPoint: leagueType ?? "", leagueId: leagueId!)
        setupNavigationBar()
        registerCellsAndHeaders()
        collectionView.setCollectionViewLayout(configureCompositionalLayout(), animated: true)
@@ -30,61 +30,45 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
        switch section {
        case 0:
-           let upcomingCount = presenter?.fixtures?.filter { $0.eventStatus == "Not Started" }.count ?? 0
-           return upcomingCount > 0 ? upcomingCount : 1
+           return presenter?.upcomingFixtures?.count ?? 1
        case 1:
-           let latestCount = presenter?.fixtures?.filter { $0.eventStatus == "Finished" }.count ?? 0
-           return latestCount > 0 ? latestCount : 1
-       case 2:
-           let teamsCount = presenter?.teams?.count ?? 0
-           return teamsCount > 0 ? teamsCount : 1
+           
+           return presenter?.latestFixtures?.count ?? 1
        default:
            return 0
        }
    }
     
-   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       switch indexPath.section {
-       case 0: // Upcoming Events
-           let upcomingFixtures = presenter?.fixtures?.filter { $0.eventStatus == "Not Started" } ?? []
-           if indexPath.item < upcomingFixtures.count {
-               let cell = dequeueCell(ofType: UpComingEvensCollectionViewCell.self, for: indexPath)
-               cell.configure(with: upcomingFixtures[indexPath.item])
-               return cell
-           } else {
-               let cell = dequeueCell(ofType: UpComingEvensCollectionViewCell.self, for: indexPath)
-               cell.showPlaceholder()
-               return cell
-           }
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        switch indexPath.section {
+        case 0: // Upcoming Events
+            let upcomingCount = presenter?.upcomingFixtures?.count ?? 0
+            if indexPath.item < upcomingCount, let fixture = presenter?.upcomingFixtures?[indexPath.item] {
+                let cell = dequeueCell(ofType: UpComingEvensCollectionViewCell.self, for: indexPath)
+                cell.configure(with: fixture)
+                return cell
+            } else {
+                let cell = dequeueCell(ofType: UpComingEvensCollectionViewCell.self, for: indexPath)
+                cell.showPlaceholder()
+                return cell
+            }
 
-       case 1: // Latest Events
-           let latestFixtures = presenter?.fixtures?.filter { $0.eventStatus == "Finished" } ?? []
-           if indexPath.item < latestFixtures.count {
-               let cell = dequeueCell(ofType: LatestEventsCollectionViewCell.self, for: indexPath)
-               cell.configure(with: latestFixtures[indexPath.item])
-               return cell
-           } else {
-               let cell = dequeueCell(ofType: LatestEventsCollectionViewCell.self, for: indexPath)
-               cell.showPlaceholder()
-               return cell
-           }
+        case 1: // Latest Events
+            let latestCount = presenter?.latestFixtures?.count ?? 0
+            if indexPath.item < latestCount, let fixture = presenter?.latestFixtures?[indexPath.item] {
+                let cell = dequeueCell(ofType: LatestEventsCollectionViewCell.self, for: indexPath)
+                cell.configure(with: fixture)
+                return cell
+            } else {
+                let cell = dequeueCell(ofType: LatestEventsCollectionViewCell.self, for: indexPath)
+                cell.showPlaceholder()
+                return cell
+            }
 
-       case 2: // Teams
-           let teams = presenter?.teams ?? []
-           if indexPath.item < teams.count {
-               let cell = dequeueCell(ofType: TeamCollectionViewCell.self, for: indexPath)
-               cell.configure(with: teams[indexPath.item])
-               return cell
-           } else {
-               let cell = dequeueCell(ofType: TeamCollectionViewCell.self, for: indexPath)
-               cell.showPlaceholder()
-               return cell
-           }
-
-       default:
-           return UICollectionViewCell()
-       }
-   }
+        default:
+            return UICollectionViewCell()
+        }
+    }
     
    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
        guard kind == UICollectionView.elementKindSectionHeader else { return UICollectionReusableView() }

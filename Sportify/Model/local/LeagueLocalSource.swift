@@ -31,7 +31,7 @@ class LeagueLocalSource: LeagueLocalSourceProtocol {
             leagueEntity.setValue(league.countryName, forKey: "countryName")
             leagueEntity.setValue(league.leagueLogo, forKey: "leagueLogo")
             leagueEntity.setValue(league.countryLogo, forKey: "countryLogo")
-
+            leagueEntity.setValue(league.sportType, forKey: "sportType")
             try context.save()
             return .success(())
 
@@ -71,7 +71,8 @@ class LeagueLocalSource: LeagueLocalSourceProtocol {
                     countryKey: obj.value(forKey: "countryKey") as? Int,
                     countryName: obj.value(forKey: "countryName") as? String,
                     leagueLogo: obj.value(forKey: "leagueLogo") as? String,
-                    countryLogo: obj.value(forKey: "countryLogo") as? String
+                    countryLogo: obj.value(forKey: "countryLogo") as? String,
+                    sportType: obj.value(forKey: "sportType") as? String
                 )
             }
 

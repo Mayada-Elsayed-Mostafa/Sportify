@@ -40,8 +40,6 @@ struct Fixture: Decodable {
     let fkStageKey: Int?
     let stageName: String?
     let leagueGroup: String?
-    let lineups: Lineups?
-    let statistics: [Statistic]?
 
     enum CodingKeys: String, CodingKey {
         case eventKey = "event_key"
@@ -75,14 +73,12 @@ struct Fixture: Decodable {
         case stageName = "stage_name"
         case leagueGroup = "league_group"
 
-        case lineups
-        case statistics
     }
 }
 
 struct Lineups: Decodable {
-    let homeTeam: TeamLineup
-    let awayTeam: TeamLineup
+    let homeTeam: TeamLineup?
+    let awayTeam: TeamLineup?
 
     enum CodingKeys: String, CodingKey {
         case homeTeam = "home_team"
@@ -109,7 +105,7 @@ struct Player: Decodable {
 }
 
 struct Coach: Decodable {
-    let coache: String
+    let coache: String?
     let coacheCountry: String?
 
     enum CodingKeys: String, CodingKey {
