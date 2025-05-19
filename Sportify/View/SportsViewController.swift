@@ -16,7 +16,7 @@ class SportsViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("SportsViewController")
         presenter = SportsPresenter(view: self)
 
         collectionView.delegate = self

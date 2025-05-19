@@ -18,9 +18,9 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("didLoad")
-        presenter = LeaguesPresenter(vc: self)
-        print(leagueType)
+
+        presenter = LeaguesPresenter(vc: self, localSource: LeagueLocalSource())
+       
         presenter?.getLeagues(endPoint: leagueType ?? "football")
     }
     
@@ -54,6 +54,20 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let res = presenter?.saveLeagueToCoreData(league: leagues[indexPath.row])
+        
+        switch res {
+        case .success:
+            print("League saved successfully")
+        case .failure(let error):
+            print("Failed to save league: \(error.localizedDescription)")
+        case .none:
+            print(leagues[indexPath.row].leagueName)
+        }
+        print(leagues[indexPath.row].leagueName)
+    }
     /*
     // MARK: - Navigation
 
@@ -64,16 +78,16 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        if let leaguesDetailsVC = storyboard.instantiateViewController(withIdentifier: "LeagueDetailsCollectionViewController") as? LeagueDetailsCollectionViewController {
-            
-            leaguesDetailsVC.leagueType = leagueType
-   
-            
-            navigationController?.pushViewController(leaguesDetailsVC, animated: true)
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        
+//        if let leaguesDetailsVC = storyboard.instantiateViewController(withIdentifier: "LeagueDetailsCollectionViewController") as? LeagueDetailsCollectionViewController {
+//            
+//            leaguesDetailsVC.leagueType = leagueType
+//   
+//            
+//            navigationController?.pushViewController(leaguesDetailsVC, animated: true)
+//        }
+//    }
     
 }
