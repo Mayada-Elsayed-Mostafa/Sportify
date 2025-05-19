@@ -26,7 +26,7 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("leagues.count \(leagues.count)")
+        
         return leagues.count
     }
     
@@ -64,5 +64,16 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     */
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let leaguesDetailsVC = storyboard.instantiateViewController(withIdentifier: "LeagueDetailsCollectionViewController") as? LeagueDetailsCollectionViewController {
+            
+            leaguesDetailsVC.leagueType = leagueType
+   
+            
+            navigationController?.pushViewController(leaguesDetailsVC, animated: true)
+        }
+    }
     
 }

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="KFD-tS-cnX" customClass="UpComingEvensCollectionViewCell" customModule="Sportify" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="185"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="350" height="185"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yll-t4-rR7">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="185"/>
+                        <color key="backgroundColor" name="ButtonColor"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sportsCricket" translatesAutoresizingMaskIntoConstraints="NO" id="OHj-W4-f8J">
+                        <rect key="frame" x="250" y="15" width="85" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="85" id="CSw-sa-bp7"/>
+                            <constraint firstAttribute="width" constant="85" id="x67-ui-kJw"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sportsTennis" translatesAutoresizingMaskIntoConstraints="NO" id="FS4-fG-0pS">
+                        <rect key="frame" x="15" y="15" width="85" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="85" id="ZDG-S2-oMQ"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="85" id="nGN-k0-sHv"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="t1W-d6-VyS"/>
+                            <constraint firstAttribute="width" constant="85" id="xqp-mv-Wcj"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcg-Fs-DjU">
+                        <rect key="frame" x="142" y="40" width="66.333333333333314" height="48"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W6" family="Hiragino Mincho ProN" pointSize="48"/>
+                        <color key="textColor" name="TextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvu-t2-ONs">
+                        <rect key="frame" x="256.33333333333331" y="115" width="63.666666666666686" height="20"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
+                        <color key="textColor" name="TextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cl-ea-hqP">
+                        <rect key="frame" x="29.999999999999996" y="115" width="63.666666666666657" height="20"/>
+                        <fontDescription key="fontDescription" name="HiraMinProN-W3" family="Hiragino Mincho ProN" pointSize="20"/>
+                        <color key="textColor" name="TextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5yr-jF-vMQ">
+                        <rect key="frame" x="143.66666666666666" y="145" width="63" height="20"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                        <color key="textColor" name="TextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15-11-2025" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WEH-es-AEs">
+                        <rect key="frame" x="119.66666666666669" y="118" width="111" height="17"/>
+                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                        <color key="textColor" name="TextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="5o3-Vr-ybk"/>
+            <constraints>
+                <constraint firstItem="5yr-jF-vMQ" firstAttribute="centerX" secondItem="KFD-tS-cnX" secondAttribute="centerX" id="0Uk-pp-yx8"/>
+                <constraint firstAttribute="trailing" secondItem="OHj-W4-f8J" secondAttribute="trailing" constant="15" id="Arf-1j-mZZ"/>
+                <constraint firstItem="WEH-es-AEs" firstAttribute="centerX" secondItem="KFD-tS-cnX" secondAttribute="centerX" id="KDh-Ap-wml"/>
+                <constraint firstItem="yll-t4-rR7" firstAttribute="leading" secondItem="KFD-tS-cnX" secondAttribute="leading" id="PGn-UG-aGk"/>
+                <constraint firstAttribute="bottom" secondItem="Jvu-t2-ONs" secondAttribute="bottom" constant="50" id="SzE-N6-PYk"/>
+                <constraint firstItem="OHj-W4-f8J" firstAttribute="top" secondItem="KFD-tS-cnX" secondAttribute="top" constant="15" id="U2q-UK-xhl"/>
+                <constraint firstItem="FS4-fG-0pS" firstAttribute="leading" secondItem="KFD-tS-cnX" secondAttribute="leading" constant="15" id="XVR-bC-TNp"/>
+                <constraint firstItem="WEH-es-AEs" firstAttribute="top" secondItem="bcg-Fs-DjU" secondAttribute="bottom" constant="30" id="YVr-b1-jxW"/>
+                <constraint firstItem="bcg-Fs-DjU" firstAttribute="centerX" secondItem="KFD-tS-cnX" secondAttribute="centerX" id="ZBq-dB-U8u"/>
+                <constraint firstItem="yll-t4-rR7" firstAttribute="top" secondItem="KFD-tS-cnX" secondAttribute="top" id="ZeI-4d-64H"/>
+                <constraint firstAttribute="trailing" secondItem="yll-t4-rR7" secondAttribute="trailing" id="aVP-Gi-f9S"/>
+                <constraint firstItem="2Cl-ea-hqP" firstAttribute="leading" secondItem="KFD-tS-cnX" secondAttribute="leading" constant="30" id="aVp-N6-pqu"/>
+                <constraint firstAttribute="trailing" secondItem="Jvu-t2-ONs" secondAttribute="trailing" constant="30" id="bXg-Yc-Nep"/>
+                <constraint firstItem="OHj-W4-f8J" firstAttribute="leading" secondItem="FS4-fG-0pS" secondAttribute="trailing" constant="150" id="eC5-4y-3j1"/>
+                <constraint firstItem="FS4-fG-0pS" firstAttribute="top" secondItem="KFD-tS-cnX" secondAttribute="top" constant="15" id="eiZ-be-Zsw"/>
+                <constraint firstItem="bcg-Fs-DjU" firstAttribute="top" secondItem="KFD-tS-cnX" secondAttribute="top" constant="40" id="o0z-FR-OPV"/>
+                <constraint firstAttribute="bottom" secondItem="2Cl-ea-hqP" secondAttribute="bottom" constant="50" id="oeX-Hi-v97"/>
+                <constraint firstAttribute="bottom" secondItem="yll-t4-rR7" secondAttribute="bottom" id="sb7-lo-DLX"/>
+                <constraint firstItem="5yr-jF-vMQ" firstAttribute="top" secondItem="WEH-es-AEs" secondAttribute="bottom" constant="10" id="yes-7b-gcU"/>
+            </constraints>
+            <size key="customSize" width="185" height="127"/>
+            <connections>
+                <outlet property="backGround" destination="yll-t4-rR7" id="BS4-Lx-I0K"/>
+                <outlet property="logoTeam1" destination="FS4-fG-0pS" id="Wn5-Q3-bXT"/>
+                <outlet property="logoTeam2" destination="OHj-W4-f8J" id="tZL-Xj-QgX"/>
+                <outlet property="matchDate" destination="WEH-es-AEs" id="PNU-PJ-Dfc"/>
+                <outlet property="matchTime" destination="5yr-jF-vMQ" id="qtj-dM-0AR"/>
+                <outlet property="nameTeam1" destination="2Cl-ea-hqP" id="iN8-Uz-oj1"/>
+                <outlet property="nameTeam2" destination="Jvu-t2-ONs" id="p21-0f-ZS8"/>
+            </connections>
+            <point key="canvasLocation" x="203.0534351145038" y="47.535211267605639"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="sportsCricket" width="370" height="432"/>
+        <image name="sportsTennis" width="564" height="1002"/>
+        <namedColor name="ButtonColor">
+            <color red="0.0" green="0.80000001192092896" blue="0.60000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
