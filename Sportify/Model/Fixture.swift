@@ -40,9 +40,6 @@ struct Fixture: Decodable {
     let fkStageKey: Int?
     let stageName: String?
     let leagueGroup: String?
-    let goalscorers: [GoalScorer]?
-    let substitutes: [Substitution]?
-    let cards: [Card]?
     let lineups: Lineups?
     let statistics: [Statistic]?
 
@@ -77,21 +74,11 @@ struct Fixture: Decodable {
         case fkStageKey = "fk_stage_key"
         case stageName = "stage_name"
         case leagueGroup = "league_group"
-        case goalscorers
-        case substitutes
-        case cards
+
         case lineups
         case statistics
     }
 }
-
-// Placeholder structs for nested types
-struct GoalScorer: Decodable {} // Extend if needed
-
-struct Substitution: Decodable {} // Extend if needed
-
-struct Card: Decodable {} // Extend if needed
-
 
 struct Lineups: Decodable {
     let homeTeam: TeamLineup
