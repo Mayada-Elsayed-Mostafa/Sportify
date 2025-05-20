@@ -35,7 +35,7 @@ class TeamCollectionViewCell: UICollectionViewCell {
             teamImage.image = UIImage(named: "placeholder")
         }
     }
-    
+
     func showPlaceholder() {
         teamName.text = "No Data"
         teamImage.image = UIImage(named: "placeholder")

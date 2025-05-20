@@ -11,6 +11,7 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         presenter = LeagueDetailsPresenter(vc: self)
         presenter?.getFixtures(endPoint: leagueType ?? "", leagueId: leagueId!)
+        presenter?.getTeams(endPoint: leagueType ?? "", leagueId: leagueId!)
         setupNavigationBar()
         registerCellsAndHeaders()
         collectionView.setCollectionViewLayout(configureCompositionalLayout(), animated: true)

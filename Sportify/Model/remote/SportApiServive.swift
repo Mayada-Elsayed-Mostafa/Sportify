@@ -7,7 +7,6 @@ class SportsApiService {
     static let shared = SportsApiService()
     private let baseURL = "https://apiv2.allsportsapi.com/"
     
-    
     func get<T: Decodable>(endPoint: String, parameters: [String: Any], completion: @escaping (T?) -> Void) {
         
         let url = baseURL + "\(endPoint)/"
