@@ -1,15 +1,8 @@
-//
-//  TeamCollectionViewCell.swift
-//  Sportify
-//
-//  Created by Macos on 18/05/2025.
-//
-
 import UIKit
 import SDWebImage
 
 class TeamCollectionViewCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var backGround: UIImageView!
     @IBOutlet weak var teamImage: UIImageView!
     @IBOutlet weak var teamName: UILabel!
@@ -32,7 +25,7 @@ class TeamCollectionViewCell: UICollectionViewCell {
         teamName.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         teamName.clipsToBounds = true
     }
-
+    
     func configure(with team: Team) {
         teamName.text = team.strTeam
         

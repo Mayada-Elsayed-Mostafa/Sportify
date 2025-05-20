@@ -1,10 +1,3 @@
-//
-//  LeagueDetailsPresenter.swift
-//  Sportify
-//
-//  Created by Macos on 16/05/2025.
-//
-
 import Foundation
 
 class LeagueDetailsPresenter {
@@ -12,24 +5,24 @@ class LeagueDetailsPresenter {
     var upcomingFixtures: [Fixture]?
     var latestFixtures: [Fixture]?
     var teams: [Team]?
-
+    
     init(vc: LeagueDetailsCollectionViewController?) {
         self.vc = vc
     }
-
+    
     func getFixtures(endPoint: String, leagueId: Int) {
         let currentDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-
+        
         // From 7 days ago
         let fromDate = Calendar.current.date(byAdding: .day, value: -30, to: currentDate)!
         // To 7 days in the future
         let toDate = Calendar.current.date(byAdding: .day, value: 7, to: currentDate)!
-
+        
         let formattedFromDate = formatter.string(from: fromDate)
         let formattedToDate = formatter.string(from: toDate)
-
+        
         let parameters: [String: Any] = [
             "met": "Fixtures",
             "APIkey": Constants.API_KEY,
@@ -37,9 +30,9 @@ class LeagueDetailsPresenter {
             "to": formattedToDate,
             "leagueId": leagueId
         ]
-
+        
         print("Fetching fixtures from \(formattedFromDate) to \(formattedToDate) for leagueId: \(leagueId)")
-
+        
         SportsApiService.shared.get(endPoint: endPoint, parameters: parameters) { (response: FixtureResponse?) in
             if let fixtures = response?.result {
                 self.upcomingFixtures = fixtures.filter {
@@ -52,7 +45,7 @@ class LeagueDetailsPresenter {
                           let d2 = formatter.date(from: $1.eventDate ?? "") else { return false }
                     return d1 < d2
                 }
-
+                
                 self.latestFixtures = fixtures.filter {
                     if let dateStr = $0.eventDate, let fixtureDate = formatter.date(from: dateStr) {
                         return fixtureDate < currentDate
@@ -63,9 +56,9 @@ class LeagueDetailsPresenter {
                           let d2 = formatter.date(from: $1.eventDate ?? "") else { return false }
                     return d1 > d2
                 }
-
+                
                 print("Upcoming: \(self.upcomingFixtures?.count ?? 0), Latest: \(self.latestFixtures?.count ?? 0)")
-
+                
                 DispatchQueue.main.async {
                     self.vc?.collectionView.reloadData()
                 }
@@ -74,14 +67,14 @@ class LeagueDetailsPresenter {
             }
         }
     }
-
-
+    
+    
     func getTeams(endPoint: String) {
         let parameters: [String: Any] = [
-            "met": "Teams",  
+            "met": "Teams",
             "APIkey": Constants.API_KEY
         ]
-
+        
         SportsApiService.shared.get(endPoint: endPoint, parameters: parameters) { (response: TeamResponse?) in
             if let teams = response?.result {
                 self.teams = teams
@@ -94,8 +87,8 @@ class LeagueDetailsPresenter {
             }
         }
     }
-
-
+    
+    
     func getLatest(endPoint: String){
         let parameters: [String: Any] = [
             "met": "Leagues",
@@ -103,7 +96,7 @@ class LeagueDetailsPresenter {
             "from": "2025-05-15",
             "to": "2025-05-18"
         ]
-
+        
         SportsApiService.shared.get(endPoint: endPoint, parameters: parameters) { (response: FixtureResponse?) in
             if let fixtures = response?.result {
                 debugPrint(fixtures)

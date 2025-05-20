@@ -1,7 +1,3 @@
-
-
-
-
 import Foundation
 
 struct FixtureResponse: Decodable {
@@ -40,7 +36,7 @@ struct Fixture: Decodable {
     let fkStageKey: Int?
     let stageName: String?
     let leagueGroup: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case eventKey = "event_key"
         case eventDate = "event_date"
@@ -72,14 +68,14 @@ struct Fixture: Decodable {
         case fkStageKey = "fk_stage_key"
         case stageName = "stage_name"
         case leagueGroup = "league_group"
-
+        
     }
 }
 
 struct Lineups: Decodable {
     let homeTeam: TeamLineup?
     let awayTeam: TeamLineup?
-
+    
     enum CodingKeys: String, CodingKey {
         case homeTeam = "home_team"
         case awayTeam = "away_team"
@@ -91,7 +87,7 @@ struct TeamLineup: Decodable {
     let substitutes: [Player]
     let coaches: [Coach]
     let missingPlayers: [String]
-
+    
     enum CodingKeys: String, CodingKey {
         case startingLineups = "starting_lineups"
         case substitutes
@@ -101,13 +97,13 @@ struct TeamLineup: Decodable {
 }
 
 struct Player: Decodable {
-    // Add player details if needed
+    
 }
 
 struct Coach: Decodable {
     let coache: String?
     let coacheCountry: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case coache
         case coacheCountry = "coache_country"

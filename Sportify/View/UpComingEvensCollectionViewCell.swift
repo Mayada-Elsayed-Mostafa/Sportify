@@ -1,10 +1,3 @@
-//
-//  UpComingEvensCollectionViewCell.swift
-//  Sportify
-//
-//  Created by Macos on 18/05/2025.
-//
-
 import UIKit
 import SDWebImage
 
@@ -33,13 +26,13 @@ class UpComingEvensCollectionViewCell: UICollectionViewCell {
         nameTeam2.text = fixture.eventAwayTeam
         matchDate.text = fixture.eventDate
         matchTime.text = fixture.eventTime
-
+        
         if let logo1 = fixture.homeTeamLogo, let url1 = URL(string: logo1) {
             logoTeam1.sd_setImage(with: url1, placeholderImage: UIImage(named: "placeholder"))
         } else {
             logoTeam1.image = UIImage(named: "placeholder")
         }
-
+        
         if let logo2 = fixture.awayTeamLogo, let url2 = URL(string: logo2) {
             logoTeam2.sd_setImage(with: url2, placeholderImage: UIImage(named: "placeholder"))
         } else {
@@ -49,14 +42,12 @@ class UpComingEvensCollectionViewCell: UICollectionViewCell {
     
     func showPlaceholder() {
         nameTeam1.text = "No Data"
-        nameTeam2.text = ""
-        matchDate.text = ""
-        matchTime.text = ""
-        
+        nameTeam2.text = "No Data"
+        matchDate.text = "No Data"
+        matchTime.text = "No Data"
         logoTeam1.image = UIImage(named: "placeholder")
         logoTeam2.image = UIImage(named: "placeholder")
-        
         backGround.alpha = 0.5
     }
-
+    
 }

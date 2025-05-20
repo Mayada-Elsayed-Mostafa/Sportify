@@ -1,10 +1,3 @@
-//
-//  LatestEventsCollectionViewCell.swift
-//  Sportify
-//
-//  Created by Macos on 18/05/2025.
-//
-
 import UIKit
 import SDWebImage
 
@@ -37,13 +30,13 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
         matchDate.text = fixture.eventDate
         matchTime.text = fixture.eventTime
         score.text = fixture.eventFinalResult
-
+        
         if let logo1 = fixture.homeTeamLogo, let url1 = URL(string: logo1) {
             logoTeam1.sd_setImage(with: url1, placeholderImage: UIImage(named: "placeholder"))
         } else {
             logoTeam1.image = UIImage(named: "placeholder")
         }
-
+        
         if let logo2 = fixture.awayTeamLogo, let url2 = URL(string: logo2) {
             logoTeam2.sd_setImage(with: url2, placeholderImage: UIImage(named: "placeholder"))
         } else {

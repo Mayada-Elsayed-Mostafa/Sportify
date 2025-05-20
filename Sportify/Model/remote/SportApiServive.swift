@@ -1,10 +1,3 @@
-//
-//  SportApiServive.swift
-//  Sportify
-//
-//  Created by Macos on 13/05/2025.
-//
-
 import Foundation
 
 import Alamofire
@@ -22,7 +15,7 @@ class SportsApiService {
         AF.request(url, method: .get, parameters: parameters)
             .validate()
             .responseDecodable(of: T.self) { response in
-
+                
                 switch response.result {
                 case .success(let data):
                     completion(data)
