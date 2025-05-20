@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+<<<<<<< HEAD
    uuid = "C27AC339-3117-4EB9-A3E3-7FD33094CB15"
+=======
+   uuid = "EEE43867-8640-4514-B5DC-01CBD9E2F279"
+>>>>>>> favorite_leagues
    type = "1"
    version = "2.0">
 </Bucket>
