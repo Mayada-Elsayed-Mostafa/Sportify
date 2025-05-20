@@ -67,12 +67,12 @@ class LeagueDetailsPresenter {
             }
         }
     }
-    
-    
-    func getTeams(endPoint: String) {
+
+    func getTeams(endPoint: String, leagueId: Int) {
         let parameters: [String: Any] = [
             "met": "Teams",
-            "APIkey": Constants.API_KEY
+            "APIkey": Constants.API_KEY,
+            "leagueId": leagueId
         ]
         
         SportsApiService.shared.get(endPoint: endPoint, parameters: parameters) { (response: TeamResponse?) in
@@ -80,14 +80,14 @@ class LeagueDetailsPresenter {
                 self.teams = teams
                 print("Teams count fetched: \(teams.count)")
                 DispatchQueue.main.async {
-                    self.vc?.collectionView.reloadData()
+                    self.vc?.collectionView.reloadSections(IndexSet(integer: 2))
                 }
             } else {
                 print("Failed to fetch teams")
             }
         }
     }
-    
+
     
     func getLatest(endPoint: String){
         let parameters: [String: Any] = [
