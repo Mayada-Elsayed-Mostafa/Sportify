@@ -11,22 +11,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="Y5M-dp-ma1" userLabel="Team Events Collection View Cell" customClass="TeamCollectionViewCell" customModule="SportsApp" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="Y5M-dp-ma1" userLabel="Team Events Collection View Cell" customClass="TeamCollectionViewCell" customModule="Sportify" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fa8-3s-msg">
-                        <rect key="frame" x="0.0" y="0.0" width="250" height="185"/>
-                        <color key="backgroundColor" name="PrimaryColor"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cricket" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-W6-4rM">
+                        <rect key="frame" x="44.666666666666657" y="10" width="160" height="141.33333333333334"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="basketball" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-W6-4rM">
-                        <rect key="frame" x="20" y="10" width="210" height="135"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team_name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMq-g0-qZ8">
-                        <rect key="frame" x="0.0" y="145" width="250" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team_name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMq-g0-qZ8">
+                        <rect key="frame" x="0.0" y="156.33333333333334" width="250" height="28.666666666666657"/>
                         <color key="backgroundColor" name="black"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                         <color key="textColor" name="TextColor"/>
@@ -35,23 +31,19 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ep4-9X-3bZ"/>
+            <color key="backgroundColor" name="CardBG"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="J0x-W6-4rM" secondAttribute="trailing" constant="20" id="3sx-bW-1Ze"/>
-                <constraint firstItem="UMq-g0-qZ8" firstAttribute="top" secondItem="J0x-W6-4rM" secondAttribute="bottom" id="C3I-VE-Vqh"/>
-                <constraint firstAttribute="bottom" secondItem="Fa8-3s-msg" secondAttribute="bottom" id="Ga4-kP-ocb"/>
-                <constraint firstAttribute="trailing" secondItem="UMq-g0-qZ8" secondAttribute="trailing" id="LGi-us-sPu"/>
-                <constraint firstItem="J0x-W6-4rM" firstAttribute="leading" secondItem="Y5M-dp-ma1" secondAttribute="leading" constant="20" id="MLA-hh-D2b"/>
-                <constraint firstItem="Fa8-3s-msg" firstAttribute="leading" secondItem="Y5M-dp-ma1" secondAttribute="leading" id="ViN-AO-gqV"/>
-                <constraint firstAttribute="bottom" secondItem="J0x-W6-4rM" secondAttribute="bottom" constant="40" id="bMH-2N-Err"/>
-                <constraint firstItem="Fa8-3s-msg" firstAttribute="top" secondItem="Y5M-dp-ma1" secondAttribute="top" id="dC9-XV-DXa"/>
-                <constraint firstItem="UMq-g0-qZ8" firstAttribute="leading" secondItem="Y5M-dp-ma1" secondAttribute="leading" id="mDn-bx-axQ"/>
-                <constraint firstItem="J0x-W6-4rM" firstAttribute="top" secondItem="Y5M-dp-ma1" secondAttribute="top" constant="10" id="vbO-gP-D8b"/>
-                <constraint firstAttribute="trailing" secondItem="Fa8-3s-msg" secondAttribute="trailing" id="vfc-1X-Bxk"/>
-                <constraint firstAttribute="bottom" secondItem="UMq-g0-qZ8" secondAttribute="bottom" id="w4r-4a-tvs"/>
+                <constraint firstItem="UMq-g0-qZ8" firstAttribute="top" secondItem="J0x-W6-4rM" secondAttribute="bottom" constant="5" id="9GN-ZG-pET"/>
+                <constraint firstItem="UMq-g0-qZ8" firstAttribute="top" secondItem="J0x-W6-4rM" secondAttribute="bottom" constant="5" id="Eb7-i9-uuc"/>
+                <constraint firstAttribute="trailing" secondItem="UMq-g0-qZ8" secondAttribute="trailing" id="IsZ-2d-y6z"/>
+                <constraint firstAttribute="trailing" secondItem="J0x-W6-4rM" secondAttribute="trailing" constant="45.200000000000003" id="MLX-xR-bFo"/>
+                <constraint firstItem="J0x-W6-4rM" firstAttribute="top" secondItem="Y5M-dp-ma1" secondAttribute="top" constant="10" id="VTS-m5-E4Q"/>
+                <constraint firstItem="J0x-W6-4rM" firstAttribute="leading" secondItem="Y5M-dp-ma1" secondAttribute="leading" constant="44.799999999999997" id="b5Q-It-tmg"/>
+                <constraint firstItem="UMq-g0-qZ8" firstAttribute="leading" secondItem="Y5M-dp-ma1" secondAttribute="leading" id="dLv-G1-SCL"/>
+                <constraint firstAttribute="bottom" secondItem="UMq-g0-qZ8" secondAttribute="bottom" id="pbV-5a-zp3"/>
             </constraints>
             <size key="customSize" width="185" height="127"/>
             <connections>
-                <outlet property="backGround" destination="Fa8-3s-msg" id="YUQ-eI-mUv"/>
                 <outlet property="teamImage" destination="J0x-W6-4rM" id="iIr-h8-bCw"/>
                 <outlet property="teamName" destination="UMq-g0-qZ8" id="tA3-eX-a36"/>
             </connections>
@@ -59,12 +51,12 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="basketball" width="3456" height="5184"/>
-        <namedColor name="PrimaryColor">
-            <color red="0.0" green="0.40000003576278687" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="cricket" width="2000" height="2000"/>
+        <namedColor name="CardBG">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColor">
-            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="black">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

@@ -3,21 +3,21 @@ import SDWebImage
 
 class TeamCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var backGround: UIImageView!
     @IBOutlet weak var teamImage: UIImageView!
     @IBOutlet weak var teamName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupBackgroundBorder()
         setupNameCorners()
+        styleImageView(teamImage) 
     }
     
-    private func setupBackgroundBorder() {
-        backGround.layer.borderColor = (UIColor(named: "gray") ?? UIColor.gray).cgColor
-        backGround.layer.borderWidth = 2.0
-        backGround.layer.cornerRadius = 24.0
-        backGround.clipsToBounds = true
+    private func styleImageView(_ imageView: UIImageView) {
+        imageView.layer.cornerRadius = imageView.frame.height / 2
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 1.5
+        imageView.layer.borderColor = UIColor(named: "SecondaryColor")?.cgColor ?? UIColor.lightGray.cgColor
+        imageView.contentMode = .scaleAspectFill
     }
     
     private func setupNameCorners() {
@@ -37,8 +37,6 @@ class TeamCollectionViewCell: UICollectionViewCell {
     }
 
     func showPlaceholder() {
-        teamName.text = "No Data"
         teamImage.image = UIImage(named: "placeholder")
-        backGround.alpha = 0.5
     }
 }

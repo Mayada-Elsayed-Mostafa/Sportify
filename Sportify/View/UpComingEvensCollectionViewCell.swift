@@ -14,10 +14,21 @@ class UpComingEvensCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupBackgroundCorners()
+        styleImageView(logoTeam1)
+        styleImageView(logoTeam2)
     }
     
+    private func styleImageView(_ imageView: UIImageView) {
+        imageView.layer.cornerRadius = imageView.frame.height / 2
+        imageView.clipsToBounds = true
+        imageView.layer.borderWidth = 1.5
+        imageView.layer.borderColor = UIColor(named: "SecondaryColor")?.cgColor ?? UIColor.lightGray.cgColor
+        imageView.contentMode = .scaleAspectFill
+    }
+    
+    
     private func setupBackgroundCorners() {
-        backGround.layer.cornerRadius = 12.0
+        backGround.layer.cornerRadius = 16.0
         backGround.clipsToBounds = true
     }
     
