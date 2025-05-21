@@ -206,8 +206,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swf-RK-VEN">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="74.333333333333329"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOd-97-2V7">
-                                                <rect key="frame" x="275" y="20.000000000000004" width="75" height="34.333333333333343"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOd-97-2V7">
+                                                <rect key="frame" x="241" y="20" width="109" height="34"/>
                                                 <color key="backgroundColor" name="CardBG"/>
                                                 <color key="tintColor" name="ButtonColor"/>
                                                 <state key="normal" title="Button"/>
@@ -289,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbZ-PM-Fcw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2642" y="110"/>
+            <point key="canvasLocation" x="-2643.5114503816794" y="109.85915492957747"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7yU-gb-w1W">
@@ -444,7 +444,7 @@
         <image name="football" width="2000" height="2000"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <namedColor name="BGColor">
-            <color red="1" green="0.94117647058823528" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.94099998474121094" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ButtonColor">
             <color red="0.92549019607843142" green="0.25098039215686274" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -453,13 +453,13 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryColor">
-            <color red="0.92549020051956177" green="0.25098040699958801" blue="0.47843140363693237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92500007152557373" green="0.25099998712539673" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColor">
-            <color red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextSecondary">
-            <color red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
