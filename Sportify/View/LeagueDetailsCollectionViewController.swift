@@ -5,14 +5,21 @@ class LeagueDetailsCollectionViewController: UICollectionViewController {
     let sectionTitles = ["Upcoming Events", "Latest Events", "Teams"]
     var leagueType: String?
     var leagueId: Int?
+    
     var presenter: LeagueDetailsPresenter?
+    
+    var league: League?
+    
+    private var heartButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = LeagueDetailsPresenter(vc: self)
+        presenter = LeagueDetailsPresenter(vc: self, localSource: LeagueLocalSource())
         presenter?.getFixtures(endPoint: leagueType ?? "", leagueId: leagueId!)
         presenter?.getTeams(endPoint: leagueType ?? "", leagueId: leagueId!)
+        
         collectionView.register(NoDataCollectionViewCell.self, forCellWithReuseIdentifier: NoDataCollectionViewCell.identifier)
+        
         setupNavigationBar()
         registerCellsAndHeaders()
         collectionView.setCollectionViewLayout(configureCompositionalLayout(), animated: true)
@@ -143,22 +150,69 @@ extension LeagueDetailsCollectionViewController {
         
         return section
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        switch indexPath.section {
+            case 2:
+            if leagueType == Constants.FOOTBALL{
+                let teamDetailsVC = storyboard.instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
+                navigationController?.pushViewController(teamDetailsVC, animated: true)
+                
+                teamDetailsVC.team = presenter?.teams?[indexPath.row]
+                teamDetailsVC.leagueType = self.leagueType
+            }
+            default:
+                    print("none")
+        }
+    }
 }
 
 // MARK: - Setup & Utilities
 
 extension LeagueDetailsCollectionViewController {
     
+
+
     private func setupNavigationBar() {
         let customFont = UIFont.systemFont(ofSize: 24, weight: .bold)
         let customColor = UIColor(named: "orange") ?? .orange
+
+        // Set title style
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: customColor,
             .font: customFont
         ]
         navigationItem.title = "League"
+
+        // Create the heart icon (start with empty)
+        let heartImage = UIImage(systemName: "heart")?.withRenderingMode(.alwaysTemplate)
+        heartButton = UIBarButtonItem(image: heartImage,
+                                       style: .plain,
+                                       target: self,
+                                       action: #selector(toggleHeart))
+        heartButton?.tintColor = customColor
+        navigationItem.rightBarButtonItem = heartButton
     }
     
+    @objc private func toggleHeart() {
+        
+        let imageName = presenter?.toggleHeart() ?? false ? "heart.fill" : "heart"
+        heartButton?.image = UIImage(systemName: imageName)
+        
+    
+        let res = presenter?.saveLeagueToCoreData(league: (self.league)!)
+        switch res {
+        case .success:
+            print("League saved successfully")
+        case .failure(let error):
+            print("Failed to save league: \(error.localizedDescription)")
+        case .none:
+            print(self.league?.leagueName)
+        }
+    }
+
     private func registerCellsAndHeaders() {
         collectionView.register(SimpleHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SimpleHeaderView.reuseIdentifier)
         
@@ -171,6 +225,7 @@ extension LeagueDetailsCollectionViewController {
         return collectionView.dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as! T
     }
 }
+
 
 // MARK: - Reuse Identifiers
 

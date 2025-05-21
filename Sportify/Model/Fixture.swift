@@ -96,9 +96,6 @@ struct TeamLineup: Decodable {
     }
 }
 
-struct Player: Decodable {
-    
-}
 
 struct Coach: Decodable {
     let coache: String?

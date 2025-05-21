@@ -52,24 +52,14 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         leagues[indexPath.row].sportType = leagueType
-        print("sportType \(leagues[indexPath.row].sportType)")
-        let res = presenter?.saveLeagueToCoreData(league: leagues[indexPath.row])
-        switch res {
-        case .success:
-            print("League saved successfully")
-        case .failure(let error):
-            print("Failed to save league: \(error.localizedDescription)")
-        case .none:
-            print(leagues[indexPath.row].leagueName)
-        }
-        print("leagueKey : \(leagues[indexPath.row].leagueKey)")
+
         
         if let leaguesDetailsVC = storyboard.instantiateViewController(withIdentifier: "LeagueDetailsCollectionViewController") as? LeagueDetailsCollectionViewController {
             
             leaguesDetailsVC.leagueType = leagueType
             leaguesDetailsVC.leagueId = leagues[indexPath.row].leagueKey
-            
-            
+            leaguesDetailsVC.league = leagues[indexPath.row]
+  
             navigationController?.pushViewController(leaguesDetailsVC, animated: true)
         }
     }

@@ -5,9 +5,12 @@ class LeagueDetailsPresenter {
     var upcomingFixtures: [Fixture]?
     var latestFixtures: [Fixture]?
     var teams: [Team]?
+    private var isHeartFilled = false
+    private var localSource: LeagueLocalSourceProtocol?
     
-    init(vc: LeagueDetailsCollectionViewController?) {
+    init(vc: LeagueDetailsCollectionViewController?, localSource: LeagueLocalSourceProtocol) {
         self.vc = vc
+        self.localSource = localSource
     }
     
     func getFixtures(endPoint: String, leagueId: Int) {
@@ -104,5 +107,14 @@ class LeagueDetailsPresenter {
                 print("Failed to fetch leagues")
             }
         }
+    }
+    
+    func toggleHeart() -> Bool{
+        isHeartFilled.toggle()
+        return isHeartFilled
+    }
+    
+    func saveLeagueToCoreData(league: League) -> Result<Void, Error> {
+        return localSource?.insertLeague(league: league) ??  .failure(NSError(domain: "App", code: 0, userInfo: [NSLocalizedDescriptionKey: "Source is unavailable"]))
     }
 }

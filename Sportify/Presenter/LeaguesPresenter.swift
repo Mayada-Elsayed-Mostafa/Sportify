@@ -3,9 +3,10 @@ import Foundation
 
 
 class LeaguesPresenter {
-    private var vc: LeaguesViewController?
+    private var vc: LeaguesViewController
     var leagues: [League]?
     private var localSource: LeagueLocalSourceProtocol?
+ 
     
     init(vc: LeaguesViewController, localSource: LeagueLocalSourceProtocol) {
         self.vc = vc
@@ -26,13 +27,13 @@ class LeaguesPresenter {
                 if(endPoint == Constants.FOOTBALL){
                     let withLogos = first100.dropFirst().filter { $0.leagueLogo != nil && !$0.leagueLogo!.isEmpty
                     }
-                    self.vc?.leagues = withLogos
+                    self.vc.leagues = withLogos
                 }else{
-                    self.vc?.leagues = first100
+                    self.vc.leagues = first100
                 }
 
                 DispatchQueue.main.async {
-                    self.vc?.leaguesTableView.reloadData()
+                    self.vc.leaguesTableView.reloadData()
                 }
             } else {
                 print("Failed to fetch leagues")
@@ -43,5 +44,6 @@ class LeaguesPresenter {
     func saveLeagueToCoreData(league: League) -> Result<Void, Error> {
         return localSource?.insertLeague(league: league) ??  .failure(NSError(domain: "App", code: 0, userInfo: [NSLocalizedDescriptionKey: "Source is unavailable"]))
     }
-
+    
+    
 }

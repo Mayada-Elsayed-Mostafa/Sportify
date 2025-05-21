@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
 
