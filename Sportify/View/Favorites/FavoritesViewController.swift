@@ -71,11 +71,41 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // 1. Remove item from the data source
-            presenter?.deleteLeague(league: leagues[indexPath.row])
-            leagues.remove(at: indexPath.row)
-            // 2. Delete the row from the table view
-            tableView.deleteRows(at: [indexPath], with: .automatic)
+            let alert = UIAlertController(
+                title: "Delete League",
+                message: "Are you sure you want to delete this league?",
+                preferredStyle: .alert
+            )
+
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+                
+                self.presenter?.deleteLeague(league: self.leagues[indexPath.row])
+                self.leagues.remove(at: indexPath.row)
+                
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }))
+
+           
+            if let vc = tableView.delegate as? UIViewController {
+                vc.present(alert, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+       
+
+        if let leaguesDetailsVC = storyboard.instantiateViewController(withIdentifier: "LeagueDetailsCollectionViewController") as? LeagueDetailsCollectionViewController {
+            
+            leaguesDetailsVC.leagueType = leagues[indexPath.row].sportType
+            leaguesDetailsVC.leagueId = leagues[indexPath.row].leagueKey
+            leaguesDetailsVC.league = leagues[indexPath.row]
+  
+            navigationController?.pushViewController(leaguesDetailsVC, animated: true)
         }
     }
     /*
