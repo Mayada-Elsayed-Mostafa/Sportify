@@ -24,4 +24,8 @@ class FavoritePresenter {
         
         return localSource?.getAllLeagues() ?? .failure(NSError(domain: "App", code: 0, userInfo: [NSLocalizedDescriptionKey: "Source is unavailable"]))
     }
+    
+    func deleteLeague(league: League) -> Result<Void, Error>{
+        return localSource?.deleteLeague(league: league) ?? .failure(NSError(domain: "App", code: 0, userInfo: [NSLocalizedDescriptionKey: "Deletion failed"]))
+    }
 }

@@ -66,6 +66,18 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // 1. Remove item from the data source
+            presenter?.deleteLeague(league: leagues[indexPath.row])
+            leagues.remove(at: indexPath.row)
+            // 2. Delete the row from the table view
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
     /*
     // MARK: - Navigation
 
