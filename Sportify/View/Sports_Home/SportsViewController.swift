@@ -38,7 +38,7 @@ class SportsViewController: UIViewController, UICollectionViewDelegate, UICollec
             default:
                 leaguesVC.leagueType = Constants.FOOTBALL
             }
-            
+            leaguesVC.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(leaguesVC, animated: true)
         }
     }

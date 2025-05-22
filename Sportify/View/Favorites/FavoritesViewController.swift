@@ -18,7 +18,11 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = FavoritePresenter(vc: self, localSource: LeagueLocalSource())
-
+        navigationItem.title = "Favorites"
+        navigationController?.navigationBar.titleTextAttributes = [
+            .font: UIFont.systemFont(ofSize: 24, weight: .bold),
+            .foregroundColor: UIColor(named: "PrimaryColor") ?? .black
+        ]
     }
     
 
@@ -104,7 +108,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             leaguesDetailsVC.leagueType = leagues[indexPath.row].sportType
             leaguesDetailsVC.leagueId = leagues[indexPath.row].leagueKey
             leaguesDetailsVC.league = leagues[indexPath.row]
-  
+            leaguesDetailsVC.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(leaguesDetailsVC, animated: true)
         }
     }

@@ -222,14 +222,12 @@
 		22516B782DD4E2BA00616242 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22A82CD22DDFAC2600F2B2B3 /* Sports_Home */,
 				228F550B2DDE16730052D617 /* TeamDetails */,
 				228F550A2DDE07CE0052D617 /* Leagues */,
 				228F55092DDE07C30052D617 /* LeagueDetails */,
 				2238B8E12DDD3B8500858B67 /* OnBoarding */,
 				22D3B1972DDBCDC300F609E9 /* Favorites */,
-				223EDCE72DD5068400481A0C /* SportsViewController.swift */,
-				223EDCE92DD50AE900481A0C /* SportCell.swift */,
-				223EDCEA2DD50AE900481A0C /* SportCell.xib */,
 				2283B88C2DD9288800DBFCA9 /* LeagueDetailsCollectionViewController.swift */,
 				2283B88E2DD94B4600DBFCA9 /* UpComingEvensCollectionViewCell.swift */,
 				2283B88F2DD94B4600DBFCA9 /* UpComingEvensCollectionViewCell.xib */,
@@ -345,6 +343,16 @@
 				2293E19C2DD26D5B000A26EA /* SportifyUITestsLaunchTests.swift */,
 			);
 			path = SportifyUITests;
+			sourceTree = "<group>";
+		};
+		22A82CD22DDFAC2600F2B2B3 /* Sports_Home */ = {
+			isa = PBXGroup;
+			children = (
+				223EDCE72DD5068400481A0C /* SportsViewController.swift */,
+				223EDCE92DD50AE900481A0C /* SportCell.swift */,
+				223EDCEA2DD50AE900481A0C /* SportCell.xib */,
+			);
+			path = Sports_Home;
 			sourceTree = "<group>";
 		};
 		22D3B1972DDBCDC300F609E9 /* Favorites */ = {
