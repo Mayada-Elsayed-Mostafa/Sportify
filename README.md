@@ -1,4 +1,4 @@
-# SportsApp
+# Sportify
 
 An iOS sports app that displays sports, leagues, events, and teams data from TheSportsDB API. Includes favorites management using CoreData and offline support.
 
