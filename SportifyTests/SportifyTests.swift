@@ -1,36 +1,38 @@
-//
-//  SportifyTests.swift
-//  SportifyTests
-//
-//  Created by Macos on 12/05/2025.
-//
-
 import XCTest
 @testable import Sportify
 
 final class SportifyTests: XCTestCase {
 
+    var networkManager: SportsApiService!
+
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        networkManager = SportsApiService()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        networkManager = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+    func testFetchLeagues() {
+        let expectation = self.expectation(description: "Fetching leagues from API")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let parameters: [String: Any] = [
+            "met": "Leagues",
+            "APIkey": "1a8e51d71f90f74c2d3240fb0e5e56ba7138dead785f3e8abcd03a3925888c23"
+        ]
+
+        networkManager.get(endPoint: "football", parameters: parameters) { (response: LeaguesResponse?) in
+            XCTAssertNotNil(response, "Response should not be nil")
+            XCTAssertEqual(response?.success, 1, "API should return success = 1")
+            XCTAssertFalse(response?.result.isEmpty ?? true, "Leagues result should not be empty")
+
+            if let firstLeague = response?.result.first {
+                print("League name: \(firstLeague.leagueName ?? "N/A")")
+            }
+
+            expectation.fulfill()
         }
-    }
 
+        waitForExpectations(timeout: 10)
+    }
 }
