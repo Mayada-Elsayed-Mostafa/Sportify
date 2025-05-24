@@ -21,7 +21,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cricket" translatesAutoresizingMaskIntoConstraints="NO" id="J0x-W6-4rM">
                         <rect key="frame" x="44.666666666666657" y="10" width="160" height="141.33333333333334"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team_name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="21" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMq-g0-qZ8">
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team_name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMq-g0-qZ8">
                         <rect key="frame" x="0.0" y="156.33333333333334" width="250" height="28.666666666666657"/>
                         <color key="backgroundColor" name="black"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
@@ -34,7 +34,6 @@
             <color key="backgroundColor" name="CardBG"/>
             <constraints>
                 <constraint firstItem="UMq-g0-qZ8" firstAttribute="top" secondItem="J0x-W6-4rM" secondAttribute="bottom" constant="5" id="9GN-ZG-pET"/>
-                <constraint firstItem="UMq-g0-qZ8" firstAttribute="top" secondItem="J0x-W6-4rM" secondAttribute="bottom" constant="5" id="Eb7-i9-uuc"/>
                 <constraint firstAttribute="trailing" secondItem="UMq-g0-qZ8" secondAttribute="trailing" id="IsZ-2d-y6z"/>
                 <constraint firstAttribute="trailing" secondItem="J0x-W6-4rM" secondAttribute="trailing" constant="45.200000000000003" id="MLX-xR-bFo"/>
                 <constraint firstItem="J0x-W6-4rM" firstAttribute="top" secondItem="Y5M-dp-ma1" secondAttribute="top" constant="10" id="VTS-m5-E4Q"/>
@@ -56,7 +55,7 @@
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColor">
-            <color red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="black">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>

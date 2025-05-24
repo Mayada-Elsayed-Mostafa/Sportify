@@ -15,6 +15,23 @@ class LatestEventsCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         styleImageView(logoTeam1)
         styleImageView(logoTeam2)
+        
+        nameTeam1.adjustsFontSizeToFitWidth = true
+        nameTeam1.minimumScaleFactor = 0.5
+        nameTeam1.numberOfLines = 1
+
+        nameTeam2.adjustsFontSizeToFitWidth = true
+        nameTeam2.minimumScaleFactor = 0.5
+        nameTeam2.numberOfLines = 1
+        
+        matchDate.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        matchDate.setContentCompressionResistancePriority(.required, for: .horizontal)
+
+        nameTeam1.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        nameTeam1.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+
+        nameTeam2.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        nameTeam2.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
     }
     
     private func styleImageView(_ imageView: UIImageView) {

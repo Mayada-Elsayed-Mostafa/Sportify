@@ -38,21 +38,21 @@
                         <color key="textColor" name="PrimaryColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYP-iz-T70">
-                        <rect key="frame" x="271" y="133.33333333333334" width="54" height="21.666666666666657"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYP-iz-T70">
+                        <rect key="frame" x="249.66666666666666" y="137" width="85.333333333333343" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" name="TextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X7X-S6-lgd">
-                        <rect key="frame" x="30" y="133.33333333333334" width="51" height="21.666666666666657"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Team1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X7X-S6-lgd">
+                        <rect key="frame" x="15" y="137" width="85" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" name="TextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10-09-2025" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MK6-VH-1fZ">
-                        <rect key="frame" x="125.33333333333334" y="117" width="99.333333333333343" height="21.666666666666657"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <rect key="frame" x="130.33333333333334" y="117" width="89.333333333333343" height="19.333333333333343"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" name="TextSecondary"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -63,7 +63,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sje-wA-49j">
-                        <rect key="frame" x="152.33333333333334" y="148.66666666666666" width="45.666666666666657" height="21.666666666666657"/>
+                        <rect key="frame" x="152.33333333333334" y="146.33333333333334" width="45.666666666666657" height="21.666666666666657"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" name="TextSecondary"/>
                         <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
             <viewLayoutGuide key="safeArea" id="Imn-gI-3xH"/>
             <color key="backgroundColor" name="CardBG"/>
             <constraints>
-                <constraint firstItem="X7X-S6-lgd" firstAttribute="leading" secondItem="N7N-09-Lwp" secondAttribute="leading" constant="30" id="1vX-z3-7Aq"/>
+                <constraint firstItem="X7X-S6-lgd" firstAttribute="leading" secondItem="N7N-09-Lwp" secondAttribute="leading" constant="15" id="1vX-z3-7Aq"/>
                 <constraint firstItem="sje-wA-49j" firstAttribute="centerX" secondItem="N7N-09-Lwp" secondAttribute="centerX" id="Dkj-hQ-3mR"/>
                 <constraint firstItem="MK6-VH-1fZ" firstAttribute="top" secondItem="Ib1-x0-1rr" secondAttribute="bottom" constant="20" id="IBj-63-bvO"/>
                 <constraint firstItem="b2e-md-heJ" firstAttribute="top" secondItem="N7N-09-Lwp" secondAttribute="top" constant="15" id="KTy-bM-5wd"/>
@@ -87,7 +87,9 @@
                 <constraint firstItem="vrM-b5-hhh" firstAttribute="centerX" secondItem="N7N-09-Lwp" secondAttribute="centerX" id="dUL-s7-So1"/>
                 <constraint firstItem="ifs-gI-8Ob" firstAttribute="leading" secondItem="N7N-09-Lwp" secondAttribute="leading" constant="15" id="dcX-IG-uxu"/>
                 <constraint firstItem="b2e-md-heJ" firstAttribute="leading" secondItem="ifs-gI-8Ob" secondAttribute="trailing" constant="150" id="ebh-AQ-rhh"/>
-                <constraint firstAttribute="trailing" secondItem="zYP-iz-T70" secondAttribute="trailing" constant="25" id="gGf-Lg-Ni0"/>
+                <constraint firstAttribute="trailing" secondItem="zYP-iz-T70" secondAttribute="trailing" constant="15" id="gGf-Lg-Ni0"/>
+                <constraint firstItem="zYP-iz-T70" firstAttribute="leading" secondItem="MK6-VH-1fZ" secondAttribute="trailing" constant="30" id="pN6-H5-eQJ"/>
+                <constraint firstItem="MK6-VH-1fZ" firstAttribute="leading" secondItem="X7X-S6-lgd" secondAttribute="trailing" constant="30.329999999999998" id="sIb-F3-jBB"/>
                 <constraint firstAttribute="bottom" secondItem="zYP-iz-T70" secondAttribute="bottom" constant="30" id="sWp-d1-H1n"/>
                 <constraint firstItem="Ib1-x0-1rr" firstAttribute="centerX" secondItem="N7N-09-Lwp" secondAttribute="centerX" id="y7L-XX-Xua"/>
             </constraints>
@@ -101,25 +103,25 @@
                 <outlet property="nameTeam2" destination="zYP-iz-T70" id="JTk-iT-gEU"/>
                 <outlet property="score" destination="Ib1-x0-1rr" id="9hr-aE-YuY"/>
             </connections>
-            <point key="canvasLocation" x="421" y="-59"/>
+            <point key="canvasLocation" x="419.84732824427482" y="-59.507042253521128"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="cricket" width="4104" height="2309"/>
+        <image name="cricket" width="2000" height="2000"/>
         <namedColor name="CardBG">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryColor">
-            <color red="0.92549020051956177" green="0.25098040699958801" blue="0.47843140363693237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92500007152557373" green="0.25099998712539673" blue="0.4779999852180481" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="SecondaryColor">
-            <color red="1" green="0.40000000596046448" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.70200002193450928" green="0.61599999666213989" blue="0.85900002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextColor">
-            <color red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="TextSecondary">
-            <color red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.45899999141693115" green="0.45899999141693115" blue="0.45899999141693115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
