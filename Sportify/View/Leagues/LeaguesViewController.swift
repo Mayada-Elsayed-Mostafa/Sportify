@@ -53,7 +53,6 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         leagues[indexPath.row].sportType = leagueType
 
-        
         if let leaguesDetailsVC = storyboard.instantiateViewController(withIdentifier: "LeagueDetailsCollectionViewController") as? LeagueDetailsCollectionViewController {
             
             leaguesDetailsVC.leagueType = leagueType
@@ -64,4 +63,11 @@ class LeaguesViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func showAlert(){
+        let alert = UIAlertController(title: "No Internet Connection",
+                                      message: "Please check your internet settings and try again.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
+    }
 }

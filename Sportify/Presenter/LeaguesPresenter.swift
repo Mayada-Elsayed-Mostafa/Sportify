@@ -36,7 +36,11 @@ class LeaguesPresenter {
                     self.vc.leaguesTableView.reloadData()
                 }
             } else {
-                print("Failed to fetch leagues")
+                DispatchQueue.main.async {
+                    self.vc.showAlert()
+                }
+                
+                print("failed to fetch")
             }
         }		
     }

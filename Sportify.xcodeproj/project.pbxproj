@@ -234,15 +234,9 @@
 				228F55092DDE07C30052D617 /* LeagueDetails */,
 				2238B8E12DDD3B8500858B67 /* OnBoarding */,
 				22D3B1972DDBCDC300F609E9 /* Favorites */,
-				2283B88C2DD9288800DBFCA9 /* LeagueDetailsCollectionViewController.swift */,
-				2283B88E2DD94B4600DBFCA9 /* UpComingEvensCollectionViewCell.swift */,
 				2283B88F2DD94B4600DBFCA9 /* UpComingEvensCollectionViewCell.xib */,
-				2283B8922DD94E3F00DBFCA9 /* TeamCollectionViewCell.swift */,
 				2283B8932DD94E3F00DBFCA9 /* TeamCollectionViewCell.xib */,
-				2283B8962DD9516800DBFCA9 /* LatestEventsCollectionViewCell.swift */,
 				2283B8972DD9516800DBFCA9 /* LatestEventsCollectionViewCell.xib */,
-				2283B89C2DD95A5A00DBFCA9 /* SimpleHeaderView.swift */,
-				2238B8E62DDD909C00858B67 /* NoDataCollectionViewCell.swift */,
 				2238B8E72DDD909C00858B67 /* NoDataCollectionViewCell.xib */,
 			);
 			path = View;
@@ -268,6 +262,12 @@
 		228F55092DDE07C30052D617 /* LeagueDetails */ = {
 			isa = PBXGroup;
 			children = (
+				2283B8962DD9516800DBFCA9 /* LatestEventsCollectionViewCell.swift */,
+				2283B89C2DD95A5A00DBFCA9 /* SimpleHeaderView.swift */,
+				2238B8E62DDD909C00858B67 /* NoDataCollectionViewCell.swift */,
+				2283B8922DD94E3F00DBFCA9 /* TeamCollectionViewCell.swift */,
+				2283B88C2DD9288800DBFCA9 /* LeagueDetailsCollectionViewController.swift */,
+				2283B88E2DD94B4600DBFCA9 /* UpComingEvensCollectionViewCell.swift */,
 			);
 			path = LeagueDetails;
 			sourceTree = "<group>";

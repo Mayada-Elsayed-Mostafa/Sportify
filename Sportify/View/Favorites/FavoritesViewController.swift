@@ -17,6 +17,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        _ = NetworkMonitor.shared
         presenter = FavoritePresenter(vc: self, localSource: LeagueLocalSource())
         navigationItem.title = "Favorites"
         navigationController?.navigationBar.titleTextAttributes = [
@@ -31,7 +32,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         switch result {
         case .success(let leagues):
-            print("Successfully fetched \(leagues.count) leagues")
+          
             // Use `leagues` here
             self.leagues = leagues
             tableView.reloadData()
@@ -99,18 +100,32 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-       
-
-        if let leaguesDetailsVC = storyboard.instantiateViewController(withIdentifier: "LeagueDetailsCollectionViewController") as? LeagueDetailsCollectionViewController {
+        let connected = NetworkMonitor.shared.isInternetAvailable()
+        if connected {
+            print("Internet is available")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
-            leaguesDetailsVC.leagueType = leagues[indexPath.row].sportType
-            leaguesDetailsVC.leagueId = leagues[indexPath.row].leagueKey
-            leaguesDetailsVC.league = leagues[indexPath.row]
-            leaguesDetailsVC.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(leaguesDetailsVC, animated: true)
+            if let leaguesDetailsVC = storyboard.instantiateViewController(withIdentifier: "LeagueDetailsCollectionViewController") as? LeagueDetailsCollectionViewController {
+                
+                leaguesDetailsVC.leagueType = leagues[indexPath.row].sportType
+                leaguesDetailsVC.leagueId = leagues[indexPath.row].leagueKey
+                leaguesDetailsVC.league = leagues[indexPath.row]
+                leaguesDetailsVC.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(leaguesDetailsVC, animated: true)
+            }
+            
+        } else {
+            print("No internet connection")
+            showAlert()
         }
+    }
+    
+    func showAlert(){
+        let alert = UIAlertController(title: "No Internet Connection",
+                                      message: "Can't display details. Please check your internet try again.",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true)
     }
     /*
     // MARK: - Navigation

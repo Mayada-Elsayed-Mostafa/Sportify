@@ -44,33 +44,6 @@ class SportsViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
     }
     
-    
-    @objc func networkStatusChanged(_ notification: Notification) {
-        guard let userInfo = notification.userInfo,
-              let isConnected = userInfo["isConnected"] as? Bool else { return }
-        
-        let title = isConnected ? "Internet Restored" : "No Internet Connection"
-        let message = isConnected
-            ? "Your internet connection is back online."
-            : "Please check your internet settings and try again."
-        print("networkStatusChanged")
-        DispatchQueue.main.async {
-            // Dismiss existing alert if any
-            if let alert = self.currentAlert {
-                alert.dismiss(animated: false)
-                self.currentAlert = nil
-            }
-            
-            
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
-                self.currentAlert = nil
-            })
-            self.currentAlert = alert
-            self.present(alert, animated: true)
-        }
-    }
-    
 }
 
 extension SportsViewController: SportsViewProtocol {
