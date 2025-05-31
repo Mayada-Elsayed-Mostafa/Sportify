@@ -34,7 +34,6 @@ class LeagueDetailsPresenter {
             "leagueId": leagueId
         ]
         
-        print("Fetching fixtures from \(formattedFromDate) to \(formattedToDate) for leagueId: \(leagueId)")
         
         SportsApiService.shared.get(endPoint: endPoint, parameters: parameters) { (response: FixtureResponse?) in
             if let fixtures = response?.result {
@@ -60,7 +59,6 @@ class LeagueDetailsPresenter {
                     return d1 > d2
                 }
                 
-                print("Upcoming: \(self.upcomingFixtures?.count ?? 0), Latest: \(self.latestFixtures?.count ?? 0)")
                 
                 DispatchQueue.main.async {
                     self.vc?.collectionView.reloadData()
